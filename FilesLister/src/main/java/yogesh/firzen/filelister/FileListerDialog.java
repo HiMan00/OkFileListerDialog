@@ -86,7 +86,7 @@ public class FileListerDialog {
     private void init(Context context) {
         filesListerView = new FilesListerView(context);
         alertDialog.setView(filesListerView);
-        alertDialog.setButton(BUTTON_POSITIVE, "Select", new DialogInterface.OnClickListener() {
+        alertDialog.setButton(BUTTON_POSITIVE, "انتخاب", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -94,13 +94,13 @@ public class FileListerDialog {
                     onFileSelectedListener.onFileSelected(filesListerView.getSelected(), filesListerView.getSelected().getAbsolutePath());
             }
         });
-        alertDialog.setButton(BUTTON_NEUTRAL, "Default Dir", new DialogInterface.OnClickListener() {
+        alertDialog.setButton(BUTTON_NEUTRAL, "مسیر پیش فرض", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 //filesListerView.goToDefaultDir();
             }
         });
-        alertDialog.setButton(BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+        alertDialog.setButton(BUTTON_NEGATIVE, "خروج", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -115,7 +115,7 @@ public class FileListerDialog {
         //getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
         switch (filesListerView.getFileFilter()) {
             case DIRECTORY_ONLY:
-                alertDialog.setTitle("Select a directory");
+                alertDialog.setTitle("انتخاب کنید pdf لطفا مسیری را برای ذخیره فایل");
                 break;
             case VIDEO_ONLY:
                 alertDialog.setTitle("Select a Video file");
